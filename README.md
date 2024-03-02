@@ -35,7 +35,7 @@ This project is licensed under the GNU License - see the [LICENSE.md](LICENSE.md
 
 ## Example and How To
 
-Strings Example:
+**Strings Example:**
 
 * (Interactive Mode) ./RTLO-Maker.py --s
 
@@ -43,7 +43,7 @@ OR
 
 ./RTLO-Maker.py --s test.txt
 
-Single File Example:
+**Single File Example:**
 
 * (Interactive Mode) ./RTLO-Maker.py --f
 
@@ -51,7 +51,7 @@ OR
 
 * ./RTLO-Maker.py --f ~/Payloads/test.txt
 
-Directory Example:
+**Directory Example:**
 
 * (Interactive Mode) ./RTLO-Maker.py --d
 
