@@ -11,6 +11,7 @@ parser.add_argument('--s', nargs='?', const='', help='String Mode')
 parser.add_argument('--d', nargs='?', const='', help='Entire Directory Mode')
 parser.add_argument('--sd', nargs='?', const='', help='Source Directory')
 parser.add_argument('--dd', nargs='?', const='', help='Desination Directory')
+parser.add_argument('--c', default='1', choices=['1', '2', '3', '4', '5'], help='Optionally Specify a different Unicode Character 1 is 202e, 2 is 200e, 3 is 200f, 4 is 05D9, 5 is 0648')
 
 args = parser.parse_args()
 
@@ -19,11 +20,22 @@ s = args.s
 d = args.d
 sd = args.sd
 dd = args.dd
+c = args.c
 
 def AddRTLOCharToFilename(basefilename):
     name, ext = os.path.splitext(basefilename)
     global modifiedfilename
-    modifiedfilename = "{name}\u202e{ext}".format(name=name, ext=ext)
+    if c == '1':
+        RTLOCharacter = '\u202e'
+    if c == '2':
+        RTLOCharacter = '\u200f'
+    if c == '3':
+        RTLOCharacter = '\u200e'
+    if c == '4':
+        RTLOCharacter = '\u05D9'
+    if c == '5':
+        RTLOCharacter = '\u0648'
+    modifiedfilename = name+RTLOCharacter+ext.format(name=name, ext=ext)
 
 def RunAddRTLOCharToFilename():
     RTLOFilename()
@@ -52,7 +64,17 @@ def RTLOFilename():
 def AddRTLOCharToString(basestring):
     name, ext = os.path.splitext(basestring)
     global modifiedstring
-    modifiedstring = "{name}\u202e{ext}".format(name=name, ext=ext)
+    if c == '1':
+        RTLOCharacter = '\u202e'
+    if c == '2':
+        RTLOCharacter = '\u200f'
+    if c == '3':
+        RTLOCharacter = '\u200e'
+    if c == '4':
+        RTLOCharacter = '\u05D9'
+    if c == '5':
+        RTLOCharacter = '\u0648'
+    modifiedstring = name+RTLOCharacter+ext.format(name=name, ext=ext)
 
 def RunAddRTLOCharToString():
     RTLOString()
@@ -90,7 +112,17 @@ def RTLODirectoryCopyFilesToDst():
 def RTLODirectoryRename():
     for filename in os.listdir(DesinationDirectory):
         name, ext = os.path.splitext(filename)
-        directorymodifiedfilename = "{name}\u202e{ext}".format(name=name, ext=ext)
+        if c == '1':
+            RTLOCharacter = '\u202e'
+        if c == '2':
+            RTLOCharacter = '\u200f'
+        if c == '3':
+            RTLOCharacter = '\u200e'
+        if c == '4':
+            RTLOCharacter = '\u05D9'
+        if c == '5':
+            RTLOCharacter = '\u0648'
+        directorymodifiedfilename = name+RTLOCharacter+ext.format(name=name, ext=ext)
         print(directorymodifiedfilename)
         print(DesinationDirectory+filename)
         os.rename(DesinationDirectory+filename, DesinationDirectory+directorymodifiedfilename)
