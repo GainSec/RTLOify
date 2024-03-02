@@ -1,7 +1,7 @@
 # R.T.L.O.I.F.Y
 ![RTLOIFY](https://gainsec.com/wp-content/uploads/2024/03/marble-knd.png)
 
-Quick script to create strings with RTLO characters, change single filenames or even entire directories. Meant to be used for RTLO bypasses/testing in regards to hacking, offensive cyber security and penetration testing. 
+Script to create strings with RTLO characters, change single filenames or even entire directories. Meant to be used for RTLO bypasses/testing in regards to hacking, offensive cyber security and penetration testing. 
 
 ## Getting Started
 
