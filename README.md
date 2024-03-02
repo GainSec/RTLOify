@@ -24,6 +24,7 @@ Python 3.6+
 ## To Do
 
 * Fill metadata of files with RTLO characters as well
+* Add arg that allows for different for different RTLO characters (Will Take 2 Seconds, I'll get that up in a few)
 * Add arg for location RTLO character (RN it's before the file extension)
 * Built out a better default value within files created
 
